@@ -3,18 +3,16 @@ game
 
 #Wireframe
 
-![wireframe](./wireframe/testing.svg)
+![wireframe](./wireframes/wireframe.jpg)
 
-#Game Intructuons
-1. Skip:The next player is "Skipped".
+#Game Intructions
+1. Program begins with a start button
 
-2. Reverse: Reverses the direction of play
+2. Next, 2 boxes for user input to setup usernames
 
-3. Draw 2:The next player must draw 2 cards and lose a turn.
+3. Match begins. Objective of game, both users compete to reach end point. First user to reach the end point.
 
-4. Draw 4:Changes the current color plus the next player must draw 4 cards and lose a turn.
-
-5. Wild Card: Play this card to change the color to be matched.
+4. The winner's user name gets displayed with the number of moves and a time stamp.
 
 # Schedule (Objective/Goals)
 ### Wednesday
