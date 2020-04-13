@@ -78,4 +78,5 @@
 // second if statement checks if the first index[1] of the walls array is a truthy value, if so draw line(x + cell, y, x + cell, y + cell)
 // third if statement checks if the first index[2] of the walls array is a truthy value, if so draw line(x + cell, y + cell, x, y + cell)
 // fourth if statement checks if the first index[3] of the walls array is a truthy value, if so draw line(x, y + cell, x, y)
+// the last if statement checks if the square has been visited, if it returns a truthy value we employ the noStroke method to undo the walls, we also want to keep track of which squares have been visited so the fill method is used (255, 0, 255, 100), also draw a rectangle for every visited square rect(x, y, cell, cell) or (cordinate 1, cordinate 2, heigth, width)
 // 
