@@ -73,4 +73,9 @@
 // to build the left line we need to draw a line from (x, y + w) to (x,y)
 // there's a wireframe on this in the wireframes folder
 // we use the stroke() method to draw the lines light or dark
+// next we make chained if statements
+// first if statement checks if the first index[0] of the walls array is a truthy value, if so draw line(x, y, x + cell, y)
+// second if statement checks if the first index[1] of the walls array is a truthy value, if so draw line(x + cell, y, x + cell, y + cell)
+// third if statement checks if the first index[2] of the walls array is a truthy value, if so draw line(x + cell, y + cell, x, y + cell)
+// fourth if statement checks if the first index[3] of the walls array is a truthy value, if so draw line(x, y + cell, x, y)
 // 
