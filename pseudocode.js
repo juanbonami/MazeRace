@@ -65,7 +65,12 @@
 // the show() function will be declared inside the squareBuilder() function
 // the i and j variables that get passed will be individually multiplied by the cell and stored in let variable x and let variable y 
 // why do we muiltiply the cordinated by the value of cell? The value of cell will be the size of each individual square we're building. For example the first cordinates we got for the nested for loop in the setup() function are (0,0) 
-// In order to build the top, right, bottom, left of each aquare we need to know that the cordinates increase as we move to the right and down, while moving to the left and up the cordinates decrease
-// 
+// In order to build the top, right, bottom, left of each aquare we need to know that the cordinates increase in ascending order as we move to the right and down, while moving to the left and up the cordinates decrease in descending order
+// as a reminder x is the column and y is the row
+// to build top line we need to draw a line from (x,y) to (x + cell, y)
+// to build right line we need to draw a line from (x + cell, y) to (x + cell, y + cell)
+// to build bottom line we need to draw a line from (x + cell, y + cell) to (x, y + w)
+// to build the left line we need to draw a line from (x, y + w) to (x,y)
+// there's a wireframe on this in the wireframes folder
 // we use the stroke() method to draw the lines light or dark
 // 
