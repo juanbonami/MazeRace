@@ -8,7 +8,9 @@ game
 #Game Intructions
 1. Program begins with a start button
 
-2. Next, 2 boxes for user input to setup usernames
+2. Random maze generates right before the users eyes
+
+3. click start button
 
 3. Match begins. Objective of game, both users compete to reach end point. First user to reach the end point.
 
