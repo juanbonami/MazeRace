@@ -79,4 +79,10 @@
 // third if statement checks if the first index[2] of the walls array is a truthy value, if so draw line(x + cell, y + cell, x, y + cell)
 // fourth if statement checks if the first index[3] of the walls array is a truthy value, if so draw line(x, y + cell, x, y)
 // the last if statement checks if the square has been visited, if it returns a truthy value we employ the noStroke method to undo the walls, we also want to keep track of which squares have been visited so the fill method is used (255, 0, 255, 100), also draw a rectangle for every visited square rect(x, y, cell, cell) or (cordinate 1, cordinate 2, heigth, width)
-// 
+// We also want to keep track of the current square or cell for the user
+// a function called highlight is created 
+// inside the block i and j will be multiplied by cell and store one value in variable x and the other in y
+// next we use fill('rgb(0,255,0)') rect(x, y, cell, cell)
+// Next we want to be able to check the current cell's neighbors to see if first they are actually there and to check if they have been visited or not
+// create a function called checkNeighbors()
+//
