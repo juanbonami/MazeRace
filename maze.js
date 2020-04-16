@@ -118,4 +118,43 @@ function squareBuilder(i, j) {
   this.j = j;
   this.walls = [true, true, true, true];
   this.visited = false;
+
+  // checkNeighbors tells the current cell where to move by checking for any surrounding neighbors that haven't been visited yet.
+  this.checkNeighbors = function () {
+    let neighbors = []; // array of cells that haven't been visited
+    //console.log(neighbors);
+    // topCell = grid[i][j-1]; if i had a 2d array but i have a 1d array therefore 1d to 2d index conversion: i + j * columns;
+    let topCell = grid[index(i, j - 1)];
+    let rightCell = grid[index(i + 1, j)];
+    let bottomCell = grid[index(i, j + 1)];
+    let leftCell = grid[index(i - 1, j)];
+
+    // checks if topcell is a real thing and it hasn't been visited, push topcell into neighbors array
+    if (topCell && !topCell.visited) {
+      neighbors.push(topCell);
+      console.log(topCell);
+    }
+    // checks if rightcell is a real thing and it hasn't been visited, push rightcell into neighbors array
+    if (rightCell && !rightCell.visited) {
+      neighbors.push(rightCell);
+    }
+    // checks if bottomcell is a real thing and it hasn't been visited, push bottomcell into neighbors array
+    if (bottomCell && !bottomCell.visited) {
+      neighbors.push(bottomCell);
+    }
+    // checks if leftcell is a real thing and it hasn't been visited, push leftcell into neighbors array
+    if (leftCell && !leftCell.visited) {
+      neighbors.push(leftCell);
+    }
+
+    if (neighbors.length > 0) {
+      // picks a random value
+      let r = floor(random(0, neighbors.length));
+      // returns that random neighbor
+      return neighbors[r];
+      // otherwise return undefined
+    } else {
+      return undefined;
+    }
+  };
 }
