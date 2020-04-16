@@ -112,3 +112,10 @@ function removeWalls(a, b) {
     b.walls[0] = false;
   }
 }
+
+function squareBuilder(i, j) {
+  this.i = i;
+  this.j = j;
+  this.walls = [true, true, true, true];
+  this.visited = false;
+}
