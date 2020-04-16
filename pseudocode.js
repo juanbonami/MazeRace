@@ -104,4 +104,33 @@
 // next we will work on a function that will remove the walls
 // for example if the current cell wants to move to the cell to the right of it, the function will have to remove 2 walls or set them to false
 // the program will have to remove the current cell's right wall AND the right cell's left wall
-//
+// create a function called removeWalls(a, b) it takes 2 arguments
+// we pass in squarebuilder object and the next cell object
+// firstly we want to know if there's a cell to the right of us or to the left of us
+// the function will subtract the i's first because i's will be to the left of us or right of us
+// j's will be on top or on bottom
+// removeWalls(a, b) {
+//     let x = a.i - b.i
+// }
+// if the value of x is -1 you're going to have a neighbor to the right
+// if the value of x is 1 you're going to have a neighbor to the left
+// if the variable x is 1 then a.wall[3] = false; b.walls[1] = false;
+// remember wall is an array with 4 boolean values all set to true
+// wall = [top,right,bottom,left] this indicates which walls will be turned on and which one will be turned off
+// a.wall[3] (current cell) is the left wall and it turns false hence removes wall
+// b.walls[1] (next cell) is the right wall and it turns false hence removes wall, creating path between 2 cells
+// same thing is done to the opposite side if x variable is 1
+// this same trend will continue for cells above and below the current cell
+// next we move back to the draw() function and add some things
+// declare a let variable called next
+// assign it the value of the currentCell.checkNeighbors()
+// this variable will always be replaced by the next recurring cell
+// write an if statement that checks for the truthy value of next and marks it as visited: next.visited = true
+// next still within the block of the if statement we want to use the backTracker array that we declared earlier to push all currentCells we get
+// next underneath we call the removeWalls(currentCell, next) and it will remove the walls between the current cell and the next cell
+// this will continue untill the generator reaches a point where all it's neighbors have been visited, once that happens it has no where to go, the program will get stuck, or stop
+// to prevent that from happening we use the stored data in the backTracker array
+// add an else if statement
+// if the backTracker.length is not 0 then assign currentCell to the first index of the backtracker array using the pop method: backtracker.pop()
+// the backtracker array saves all it's indexes it's been through so when it gets stuck it'll back track it's way until it reaches a currentCell that has at least 1 unvisited neighbor
+// in the wireframes folder there's a visual sketch of this process and a resource for this whithin the code in maze.js
