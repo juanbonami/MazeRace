@@ -157,4 +157,13 @@ function squareBuilder(i, j) {
       return undefined;
     }
   };
+  this.highlight = function () {
+    let x = this.i * cell;
+    let y = this.j * cell;
+    // noStroke();
+    // colors the current cell for the user to see it's position
+    // fill(0, 0, 255, 100);
+    fill("rgb(0,255,0)");
+    rect(x, y, cell, cell);
+  };
 }
