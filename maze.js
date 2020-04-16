@@ -166,4 +166,29 @@ function squareBuilder(i, j) {
     fill("rgb(0,255,0)");
     rect(x, y, cell, cell);
   };
+
+  this.show = function () {
+    // updates the cordinates to fit in canvas
+    let x = this.i * cell;
+    let y = this.j * cell;
+    stroke(255);
+    // checks if every index in the walls array is a truthy value to build the walls
+    if (this.walls[0]) {
+      // draws top line
+      // x and y is a cordinate that connects a line to cordinate x+w,y
+      line(x, y, x + cell, y);
+    }
+    if (this.walls[1]) {
+      // draws right line
+      line(x + cell, y, x + cell, y + cell);
+    }
+    if (this.walls[2]) {
+      // draws bottom line
+      line(x + cell, y + cell, x, y + cell);
+    }
+    if (this.walls[3]) {
+      // draws left line
+      line(x, y + cell, x, y);
+    }
+  };
 }
