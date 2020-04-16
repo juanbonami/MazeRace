@@ -67,3 +67,48 @@ function draw() {
     currentCell = backTrack.pop();
   }
 }
+
+function index(i, j) {
+  // checks for out of bounds positions
+  if (i < 0 || j < 0 || i > columns - 1 || j > rows - 1) {
+    return -1;
+  }
+  // return index position
+  // https://stackoverflow.com/questions/16790584/converting-index-of-one-dimensional-array-into-two-dimensional-array-i-e-row-a
+  return i + j * columns;
+}
+
+function removeWalls(a, b) {
+  // console.log(a);
+  //
+  let x = a.i - b.i;
+  // console.log(a.i, b.i);
+  // console.log(x);
+  // if a.i - b.i = 1 then a needs it's left wall removed and b needs needs it's right wall removed
+  if (x === 1) {
+    // wall[3] is left wall
+    a.walls[3] = false;
+    // wall[1] is right wall
+    b.walls[1] = false;
+    // if a.i - b.i = -1 then a needs it's right wall removed and b needs it's left wall removed
+  } else if (x === -1) {
+    // wall[1] is right wall
+    a.walls[1] = false;
+    // wall[3] is left wall
+    b.walls[3] = false;
+  }
+  // if a.j - b.j = 1 then a needs it's top removed and b needs it's bottom removed
+  let y = a.j - b.j;
+  if (y === 1) {
+    // walls[0] is top wall
+    a.walls[0] = false;
+    // walls[2] is bottom wall
+    b.walls[2] = false;
+    // if a.j - b.j = -1 a needs it's bottom removed and b needs it's top removed
+  } else if (y === -1) {
+    // walls[2] is bottom wall
+    a.walls[2] = false;
+    // walls[0] is top wall
+    b.walls[0] = false;
+  }
+}
