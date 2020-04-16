@@ -132,7 +132,7 @@ function squareBuilder(i, j) {
     // checks if topcell is a real thing and it hasn't been visited, push topcell into neighbors array
     if (topCell && !topCell.visited) {
       neighbors.push(topCell);
-      console.log(topCell);
+      // console.log(topCell);
     }
     // checks if rightcell is a real thing and it hasn't been visited, push rightcell into neighbors array
     if (rightCell && !rightCell.visited) {
@@ -189,6 +189,15 @@ function squareBuilder(i, j) {
     if (this.walls[3]) {
       // draws left line
       line(x, y + cell, x, y);
+    }
+
+    if (this.visited) {
+      // no stroke knocks the walls down
+      noStroke();
+      // colors the rect a pinkish color for every cell visited
+      fill(255, 0, 255, 100);
+      // draw a rectangle for every visited cell
+      rect(x, y, cell, cell);
     }
   };
 }
