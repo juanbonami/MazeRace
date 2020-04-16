@@ -85,4 +85,11 @@
 // next we use fill('rgb(0,255,0)') rect(x, y, cell, cell)
 // Next we want to be able to check the current cell's neighbors to see if first they are actually there and to check if they have been visited or not
 // create a function called checkNeighbors()
-//
+// first declare an array called neighbors
+// there's a wireframe for this part in the wireframe folders
+// the current square or cell needs to check it's top, right, bottom, and left neighbors.
+// to find these neighbors we need to convert the 1 dimentional array grid[] into a 2 demintional array, formula for this on stackoverflow https://stackoverflow.com/questions/16790584/converting-index-of-one-dimensional-array-into-two-dimensional-array-i-e-row-a
+// since we're using this multiple times let's create a function for it to simplyfy our code.
+// create function index(i,j) function takes 2 arguments and returns the 2D array conversion.
+// also function checks for any indexes that may be out of bounds.
+// the index for the top,right,bottom,left will be stored in a variable
